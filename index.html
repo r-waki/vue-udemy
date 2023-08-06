@@ -1,42 +1,20 @@
-
-<html>
-    <head>
-        <title>Vue-Udemy</title>
-    </head>
-    <body>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Vue-Udemy</title>
+</head>
+<body>
 
         <div id="app">
-            <input type="text" name="text" :value="message" >
-            <p v-if="toggle">aaa</p>
-            <ul>
-                <li v-for="(value, key) in user">
-                    {{ key }} : {{ value }}
-                </li>
-            </ul>
-
+            <hello-component></hello-component>
+            <hello-component></hello-component>
+            <hello-component></hello-component>
         </div>        
 
     <script src="https://unpkg.com/vue@3.1.5"></script>
-
-    <script>
-        const app=Vue.createApp({
-            data:()=> ({
-                message: "Hello Vue3!",
-                toggle: true,
-                colors: ['Red', 'Green', 'Blue'],
-                user: {
-                    lastName: 'Waki',
-                    firstName: 'Ryota',
-                    prefecture: 'Kanagawa'
-                },
- 
-           })
-        })
-        app.mount('#app')
-    </script>
-
-    </body>
-
+    <script src="js/main.js"></script>
+</body>
 </html>
-
-
