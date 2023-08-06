@@ -8,11 +8,11 @@
         <div id="app">
             <input type="text" name="text" :value="message" >
             <p v-if="toggle">aaa</p>
-            <ol>
-                <li v-for="color in colors">
-                    {{ color }}
+            <ul>
+                <li v-for="(value, key) in user">
+                    {{ key }} : {{ value }}
                 </li>
-            </ol>
+            </ul>
 
         </div>        
 
@@ -24,6 +24,12 @@
                 message: "Hello Vue3!",
                 toggle: true,
                 colors: ['Red', 'Green', 'Blue'],
+                user: {
+                    lastName: 'Waki',
+                    firstName: 'Ryota',
+                    prefecture: 'Kanagawa'
+                },
+ 
            })
         })
         app.mount('#app')
