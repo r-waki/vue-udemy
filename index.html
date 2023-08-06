@@ -6,12 +6,14 @@
     <body>
 
         <div id="app">
-            <p>{{ message }}</p>
-            <p>{{ count }}</p>
-            <p>{{ user.lastName }}</p>
-            <p>{{ user.firstName }}</p>
-            <p>{{ colors[0] }}</p>
-            <p>{{ colors[1] }}</p>
+            <input type="text" name="text" :value="message" >
+            <p v-if="toggle">aaa</p>
+            <ol>
+                <li v-for="color in colors">
+                    {{ color }}
+                </li>
+            </ol>
+
         </div>        
 
     <script src="https://unpkg.com/vue@3.1.5"></script>
@@ -19,15 +21,10 @@
     <script>
         const app=Vue.createApp({
             data:()=> ({
-                message: 'Hello Vue.js',
-                count: 99,
-                user: {
-                    lastName: 'Waki',
-                    firstName: 'Ryota',
-                    prefecture: 'Kanagawa'
-                },
-                colors: ['Red', 'Green', 'Blue']
-            })
+                message: "Hello Vue3!",
+                toggle: true,
+                colors: ['Red', 'Green', 'Blue'],
+           })
         })
         app.mount('#app')
     </script>
